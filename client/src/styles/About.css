@@ -39,3 +39,17 @@
 .about .btn:hover {
     background-color: #21a1f1;
 }
+
+.about {
+    text-align: center;
+  }
+  
+  .about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #555;
+    text-align: justify; /* This will justify the text */
+  }
+  

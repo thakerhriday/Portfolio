@@ -1,35 +1,47 @@
-/* src/styles/Projects.css */
 .projects {
-    background-color: #ffffff;
     padding: 50px;
+    background-color: #f4f4f4;
+  }
+  
+  .projects h2 {
     text-align: center;
-}
-
-.projects h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.project-item {
-    background-color: #f9f9f9;
+    margin-bottom: 30px;
+  }
+  
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .project-item {
+    background-color: white;
+    border: 1px solid #ddd;
     padding: 20px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 15px;
-    transition: transform 0.3s ease;
-}
-
-.project-item:hover {
-    transform: translateY(-10px);
-}
-
-.project-item h3 {
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.project-item p {
-    font-size: 1rem;
-    color: #555;
-}
+    text-align: center;
+  }
+  
+  .project-item h3 {
+    margin-top: 0;
+  }
+  
+  .project-item p {
+    margin: 10px 0;
+  }
+  
+  .project-item .btn {
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 4px;
+  }
+  
+  .project-item .btn:hover {
+    background-color: #0056b3;
+  }
+  
