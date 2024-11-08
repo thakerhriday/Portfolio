@@ -1,22 +1,23 @@
-/* src/styles/Home.css */
 .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     background-color: #282c34;
     color: white;
+    padding: 100px 20px;
     text-align: center;
 }
 
-.btn-primary {
-    padding: 10px 20px;
-    background-color: #61dafb;
-    color: #282c34;
-    border: none;
-    cursor: pointer;
+.home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-.btn-primary:hover {
-    background-color: #21a1f1;
+.home p {
+    font-size: 1.5rem;
+}
+
+.profile-pic {
+    width: 150px;  /* Adjust size as needed */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 30px;
 }
