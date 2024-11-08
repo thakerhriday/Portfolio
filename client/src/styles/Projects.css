@@ -1,47 +1,80 @@
-.projects {
-    padding: 50px;
-    background-color: #f4f4f4;
-  }
-  
-  .projects h2 {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  
-  .project-item {
-    background-color: white;
-    border: 1px solid #ddd;
+/* General Layout and Project Container */
+.projects-container {
+    width: 100%;
     padding: 20px;
-    margin: 10px;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-sizing: border-box;
     text-align: center;
   }
   
-  .project-item h3 {
-    margin-top: 0;
+  .projects-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
   
-  .project-item p {
-    margin: 10px 0;
+  /* Grid Layout */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+    padding: 20px;
   }
   
-  .project-item .btn {
-    text-decoration: none;
-    color: #fff;
+  .project-tile {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .project-tile h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .project-tile .description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+  }
+  
+  .project-tile .technologies {
+    margin-top: 10px;
+  }
+  
+  .project-tile .tech {
+    display: inline-block;
     background-color: #007bff;
-    padding: 10px 20px;
-    border-radius: 4px;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
   }
   
-  .project-item .btn:hover {
-    background-color: #0056b3;
+  .project-tile a {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .project-tile a:hover {
+    background-color: #218838;
+  }
+  
+  /* Responsive Layout for Smaller Screens */
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr; /* 1 column */
+    }
   }
   

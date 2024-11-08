@@ -1,36 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../styles/Projects.css';
+import '../styles/Projects.css'; // Ensure this file exists
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    // Fetch project data from the Express backend
-    axios.get('http://localhost:5000/projects')  // Your backend API URL
-      .then(response => {
-        setProjects(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the projects!', error);
-      });
+    fetch('http://localhost:5000/projects')  // Assuming your backend is running locally
+      .then(response => response.json())
+      .then(data => setProjects(data));
   }, []);
 
   return (
-    <div id="projects" className="projects">
+    <div id="projects" className="projects-container">
       <h2>Projects</h2>
-      {projects.length === 0 ? (
-        <p>Loading projects...</p>
-      ) : (
-        projects.map((project, index) => (
-          <div key={index} className="project">
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <div key={index} className="project-tile">
             <h3>{project.title}</h3>
-            <p>{project.description}</p>
-            <p><strong>Technologies:</strong> {project.technologies.join(', ')}</p>
-            {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">GitHub</a>}
+            <p className="description">{project.description}</p>
+            <div className="technologies">
+              {project.technologies && project.technologies.map((tech, index) => (
+                <span key={index} className="tech">{tech}</span>
+              ))}
+            </div>
+            {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>}
           </div>
-        ))
-      )}
+        ))}
+      </div>
     </div>
   );
 };
