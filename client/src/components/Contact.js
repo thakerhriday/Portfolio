@@ -1,57 +1,20 @@
-// src/components/Contact.js
-import React, { useState } from 'react';
-import axios from 'axios';
-import '../styles/Contact.css';
+import React from 'react';
+import '../styles/Contact.css'; // Ensure this file exists for styles
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.post('http://localhost:5000/contact', formData);
-            alert('Message sent!');
-        } catch (err) {
-            alert('Error sending message!');
-        }
-    };
-
-    return (
-        <section id="contact" className="contact">
-            <h2>Contact Me</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                />
-                <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                />
-                <button type="submit" className="btn-primary">Send</button>
-            </form>
-        </section>
-    );
-}
+  return (
+    <div id="contact" className="contact-container">
+      <h2>Contact Me</h2>
+      <div className="contact-info">
+        <p><strong>Mobile:</strong> +91 8275740243</p>
+        <p><strong>Email:</strong> hriday.thaker2604@gmail.com</p>
+        <p>
+          <strong>LinkedIn:</strong> 
+          <a href="https://www.linkedin.com/in/hridaythaker/" target="_blank" rel="noopener noreferrer">linkedin.com/in/hridaythaker</a>
+        </p>
+      </div>
+    </div>
+  );
+};
 
 export default Contact;

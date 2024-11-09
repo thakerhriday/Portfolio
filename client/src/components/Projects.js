@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/Projects.css'; // Ensure this file exists
+import '../styles/Projects.css';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/projects')  // Assuming your backend is running locally
+    fetch('http://localhost:5000/projects')
       .then(response => response.json())
       .then(data => setProjects(data));
   }, []);
@@ -19,11 +19,17 @@ const Projects = () => {
             <h3>{project.title}</h3>
             <p className="description">{project.description}</p>
             <div className="technologies">
-              {project.technologies && project.technologies.map((tech, index) => (
-                <span key={index} className="tech">{tech}</span>
+              {project.technologies && project.technologies.map((tech, idx) => (
+                <span key={idx} className="tech">{tech}</span>
               ))}
             </div>
-            {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>}
+            {project.link ? (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
+                View Project on GitHub
+              </a>
+            ) : (
+              <p className="no-link">No link available</p>
+            )}
           </div>
         ))}
       </div>
