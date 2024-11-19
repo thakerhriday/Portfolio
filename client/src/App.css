@@ -51,12 +51,18 @@ body {
 }
 
 /* Home Section Styles */
+/* Home Section Styles */
 .home {
   background: linear-gradient(135deg, #282c34, #3c4048);
   color: white;
   padding: 100px 20px;
   text-align: center;
   animation: fadeIn 1.5s ease-in-out;
+  min-height: 100vh; /* Ensures the Home section spans the full viewport height */
+  display: flex; /* Enables centering */
+  flex-direction: column; /* Aligns content vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
 }
 
 .home h1 {
@@ -85,6 +91,7 @@ body {
   background-color: #21a1f1;
   transform: scale(1.05);
 }
+
 
 /* About Section Styles */
 .about {
