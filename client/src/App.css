@@ -3,12 +3,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: #fafafa;
   color: #333;
+  overflow-x: hidden;
 }
 
 .App {
@@ -23,6 +25,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
@@ -39,18 +42,21 @@ body {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
 }
 
-.navbar a:hover {
+.navbar a:hover,
+.navbar a.active {
   color: #61dafb;
 }
 
 /* Home Section Styles */
 .home {
-  background-color: #282c34;
+  background: linear-gradient(135deg, #282c34, #3c4048);
   color: white;
   padding: 100px 20px;
   text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .home h1 {
@@ -72,18 +78,20 @@ body {
   border-radius: 4px;
   text-decoration: none;
   font-size: 1.1rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .home .btn:hover {
   background-color: #21a1f1;
-  transition: 0.3s;
+  transform: scale(1.05);
 }
 
 /* About Section Styles */
 .about {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   padding: 50px 20px;
   text-align: center;
+  animation: slideIn 1s ease-in-out;
 }
 
 .about h2 {
@@ -101,7 +109,7 @@ body {
 
 /* Projects Section Styles */
 .projects {
-  background-color: #ffffff;
+  background: #ffffff;
   padding: 50px 20px;
   text-align: center;
 }
@@ -112,19 +120,26 @@ body {
   margin-bottom: 20px;
 }
 
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
 .project-item {
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #ffffff, #e6e6e6);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 15px;
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 320px;
   margin: 15px auto;
 }
 
 .project-item:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-item h3 {
@@ -139,9 +154,10 @@ body {
 
 /* Contact Section Styles */
 .contact {
-  background-color: #f4f4f4;
+  background: #f4f4f4;
   padding: 50px 20px;
   text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .contact h2 {
@@ -164,6 +180,13 @@ body {
   border: 2px solid #ddd;
   border-radius: 4px;
   font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border: 2px solid #61dafb;
+  outline: none;
 }
 
 .contact button {
@@ -174,9 +197,31 @@ body {
   border-radius: 4px;
   font-size: 1.1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .contact button:hover {
   background-color: #21a1f1;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
