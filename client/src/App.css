@@ -88,7 +88,7 @@ body {
 .loading-bar-fill {
   height: 100%;
   background: #61dafb;
-  animation: fillBar 3s forwards;
+  animation: fillBar 1.5s forwards;
 }
 
 .loading-text {
@@ -96,18 +96,25 @@ body {
   color: #61dafb;
 }
 
-/* Photo ID Section */
-.id-card {
-  opacity: 0;
-  animation: fadeIn 1s 3s forwards; /* Fades in after the loading bar finishes */
-  text-align: center;
-  max-width: 500px;
-  padding: 20px;
-  background: white;
-  color: #333;
-  border-radius: 15px;
+/* ID Card Full-Screen Layout */
+.id-card-full {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Border separation */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+  color: white; /* Ensure text remains readable on a transparent background */
 }
+
 
 .profile-pic {
   border-radius: 50%;

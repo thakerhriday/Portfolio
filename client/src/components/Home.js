@@ -1,41 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Home.css';
-import linkedinProfilePic from '../assets/linkedin-profile-pic.jpg'; // Import your image
+import linkedinProfilePic from '../assets/linkedin-profile-pic.jpg'; // Your image
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading animation duration
-    const timer = setTimeout(() => {
-      setLoading(false); // Automatically switch to the homepage content
-    }, 3000); // 3 seconds for the animation
-
-    return () => clearTimeout(timer); // Cleanup timeout
+    // Simulate loading for 3 seconds
+    const timer = setTimeout(() => setIsLoading(false), 1900);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div id="home" className="home">
-      {loading ? (
-        <div className="loading-bar-container">
-          <div className="loading-bar">
-            <div className="loading-bar-fill"></div>
-          </div>
-          <div className="loading-text">Loading your portfolio...</div>
+    <div>
+      {isLoading ? (
+        <div className="loading-container">
+          <div className="loading-bar"></div>
+          <p className="loading-text">Loading the portfolio...</p>
         </div>
       ) : (
-        <div className="id-card">
-          <img
-            src={linkedinProfilePic}
-            alt="Hriday Thaker"
-            className="profile-pic"
-          />
-          <h1>Hi, I'm Hriday Thaker</h1>
-          <p>Welcome to my portfolio! Explore below:</p>
-          <div className="links">
-            <a href="/about">About</a>
-            <a href="/projects">Projects</a>
-            <a href="/contact">Contact</a>
+        <div className="home-container">
+          {/* Left Section: Text and Links */}
+          <div className="home-text">
+            <h1 className="animated-hi">Hi, I'm Hriday Thaker</h1>
+            <p></p>
+            <p className="welcome-message">Welcome to my portfolio! Explore my work, projects, and achievements.</p>
+            <div className="nav-links">
+              <a href="about" className="nav-link">About</a>
+              <a href="projects" className="nav-link">Projects</a>
+              <a href="contact" className="nav-link">Contact</a>
+            </div>
+          </div>
+          {/* Right Section: Profile Picture */}
+          <div className="home-image">
+            <img src={linkedinProfilePic} alt="Hriday Thaker" className="profile-pic" />
           </div>
         </div>
       )}
