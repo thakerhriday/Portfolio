@@ -1,149 +1,161 @@
 /* Home Container */
 .home-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 0 50px;
-    background: linear-gradient(135deg, #282c34, #3a3f47); /* Subtle gradient */
-    color: white;
-    overflow: hidden;
-  }
-  
-  /* Left Section: Text and Links */
-  .home-text {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 50%;
-    animation: fadeInLeft 1s ease;
-  }
-  
-  .animated-hi {
-    font-size: 4rem;
-    color: #61dafb;
-    margin-bottom: 20px;
-  }
-  
-  .welcome-message {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    line-height: 1.5;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .nav-link {
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    background-color: #61dafb;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    background-color: #21a1f1;
-  }
-  
-  /* Right Section: Profile Picture */
-  .home-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: fadeInRight 1.5s ease;
-    max-width: 50%;
-  }
-  
-  .profile-pic {
-    width: 600px; /* Increase width */
-    height: 600px; /* Increase height */
-    border-radius: 50%; /* Keep circular shape */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Enhance shadow for better appearance */
-    object-fit: cover;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 50px;
+  background: linear-gradient(135deg, #282c34, #3a3f47); /* Subtle gradient */
+  color: white;
+  overflow: hidden;
 }
 
-  
-  /* Animations */
-  @keyframes fadeInLeft {
-    from {
+/* Left Section: Text and Links */
+.home-text1 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 50%;
+  animation: fadeInLeft 1s ease;
+  padding-left: 25px;
+}
+
+.home-text2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 50%;
+  animation: fadeInLeft 1s ease;
+  padding-left: 45px;
+}
+
+.animated-hi {
+  font-size: 4rem;
+  color: #61dafb;
+  margin-bottom: 20px;
+}
+
+.welcome-message {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  background-color: #61dafb;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #21a1f1;
+}
+
+/* Right Section: Profile Picture */
+/* Home Image Section */
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;          /* Set width explicitly */
+  height: 600px;         /* Set height explicitly */
+  border-radius: 50%;
+  overflow: hidden;      /* Hide overflowed image parts */
+  object-fit: cover;     /* Ensure image scales correctly within the given size */
+  animation: fadeInRight 1.5s ease;
+}
+
+/* Optional: Target the image directly */
+.home-image img {
+  width: 55%;           /* Ensure image takes up full width of its container */
+  height: 55%;          /* Ensure image takes up full height of its container */
+  object-fit: cover;     /* Keeps the image cover-style fitting inside the circle */
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
       opacity: 0;
       transform: translateX(-50px);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateX(0);
-    }
   }
-  
-  @keyframes fadeInRight {
-    from {
+}
+
+@keyframes fadeInRight {
+  from {
       opacity: 0;
       transform: translateX(50px);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateX(0);
-    }
   }
-  
-
+}
 
 /* Loading Container */
 .loading-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #282c34, #3a3f47);
-    color: white;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Loading Bar */
-  .loading-bar {
-    width: 80%;
-    height: 10px;
-    background: #ddd;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 15px; /* Space between the bar and text */
-  }
-  
-  .loading-bar::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 0;
-    background: #61dafb;
-    animation: loadingAnimation 1s 0.5s forwards;
-  }
-  
-  /* Loading Text */
-  .loading-text {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #61dafb;
-  }
-  
-  @keyframes loadingAnimation {
-    from {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #282c34, #3a3f47);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* Loading Bar */
+.loading-bar {
+  width: 80%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 15px; /* Space between the bar and text */
+}
+
+.loading-bar::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: #61dafb;
+  animation: loadingAnimation 1s 0.5s forwards;
+}
+
+/* Loading Text */
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #61dafb;
+}
+
+@keyframes loadingAnimation {
+  from {
       width: 0;
-    }
-    to {
-      width: 100%;
-    }
   }
-  
+  to {
+      width: 100%;
+  }
+}
