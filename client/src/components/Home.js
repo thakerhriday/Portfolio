@@ -24,7 +24,7 @@ const Home = () => {
           <div className="home-text">
             <h1 className="animated-hi">Hi, I'm Hriday Thaker</h1>
             <p></p>
-            <p className="welcome-message">Welcome to my portfolio! Explore my work, projects, and achievements.</p>
+            <p className="welcome-message"><h2>Welcome to my portfolio! Explore my work, projects, and achievements.</h2></p>
             <div className="nav-links">
               <a href="about" className="nav-link">About</a>
               <a href="projects" className="nav-link">Projects</a>

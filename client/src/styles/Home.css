@@ -12,7 +12,7 @@
 }
 
 /* Left Section: Text and Links */
-.home-text1 {
+.home-text {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,35 +20,35 @@
   align-items: flex-start;
   max-width: 50%;
   animation: fadeInLeft 1s ease;
-  padding-left: 25px;
-}
-
-.home-text2 {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 50%;
-  animation: fadeInLeft 1s ease;
-  padding-left: 45px;
+  padding-left: 40px; /* Added padding to the left */
+  padding-top: 40px; /* Added padding from the top to move content down */
 }
 
 .animated-hi {
   font-size: 4rem;
   color: #61dafb;
   margin-bottom: 20px;
+  white-space: nowrap;       /* Prevent text from wrapping onto a new line */
+  overflow: hidden;
+  margin-left: -20px;
+  margin-top: -130px;
 }
 
 .welcome-message {
   font-size: 1.2rem;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 10px;  /* Reduced margin to bring it closer to the links */
   line-height: 1.5;
+  padding-left: 20px; /* Added padding to align with text */
 }
 
 .nav-links {
   display: flex;
   gap: 15px;
+  padding-left: 20px;
+  margin-top: 10px;  /* Reduced the margin between the welcome text and the links */
+  justify-content: center;
+  align-items: center;  
 }
 
 .nav-link {
@@ -59,6 +59,8 @@
   border-radius: 4px;
   font-size: 1.1rem;
   transition: all 0.3s ease;
+  justify-content: center;
+  align-items: center;  
 }
 
 .nav-link:hover {
@@ -72,41 +74,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;          /* Set width explicitly */
-  height: 600px;         /* Set height explicitly */
+  width: 400px; /* Set width explicitly */
+  height: 600px; /* Set height explicitly */
   border-radius: 50%;
-  overflow: hidden;      /* Hide overflowed image parts */
-  object-fit: cover;     /* Ensure image scales correctly within the given size */
+  overflow: hidden; /* Hide overflowed image parts */
+  object-fit: cover; /* Ensure image scales correctly within the given size */
   animation: fadeInRight 1.5s ease;
 }
 
 /* Optional: Target the image directly */
 .home-image img {
-  width: 55%;           /* Ensure image takes up full width of its container */
-  height: 55%;          /* Ensure image takes up full height of its container */
-  object-fit: cover;     /* Keeps the image cover-style fitting inside the circle */
+  width: 55%; /* Ensure image takes up full width of its container */
+  height: 55%; /* Ensure image takes up full height of its container */
+  object-fit: cover; /* Keeps the image cover-style fitting inside the circle */
 }
 
 /* Animations */
 @keyframes fadeInLeft {
   from {
-      opacity: 0;
-      transform: translateX(-50px);
+    opacity: 0;
+    transform: translateX(-50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes fadeInRight {
   from {
-      opacity: 0;
-      transform: translateX(50px);
+    opacity: 0;
+    transform: translateX(50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -153,9 +155,9 @@
 
 @keyframes loadingAnimation {
   from {
-      width: 0;
+    width: 0;
   }
   to {
-      width: 100%;
+    width: 100%;
   }
 }
