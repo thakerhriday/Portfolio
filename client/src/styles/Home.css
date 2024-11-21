@@ -5,10 +5,11 @@
   align-items: center;
   justify-content: space-between;
   height: 100vh;
-  padding: 0 50px;
+  padding: 0 20px; /* Reduced padding for better responsiveness */
   background: linear-gradient(135deg, #282c34, #3a3f47); /* Subtle gradient */
   color: white;
   overflow: hidden;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 /* Left Section: Text and Links */
@@ -17,40 +18,46 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start;  /* Align items to the left */
   max-width: 50%;
   animation: fadeInLeft 1s ease;
-  padding-left: 40px; /* Added padding to the left */
-  padding-top: 40px; /* Added padding from the top to move content down */
+  padding-left: 25px;
+  margin-bottom: 20px; /* Add some space at the bottom */
+  text-align: left; /* Ensure text is aligned left */
 }
 
+/* Animated Heading */
 .animated-hi {
-  font-size: 4rem;
+  font-size: 3rem; /* Adjust font size for better responsiveness */
   color: #61dafb;
-  margin-bottom: 20px;
-  white-space: nowrap;       /* Prevent text from wrapping onto a new line */
-  overflow: hidden;
-  margin-left: -20px;
-  margin-top: -130px;
+  margin-bottom: 10px;
+  padding-left: 10px; /* Move text a bit to the left */
 }
 
+/* Welcome Message */
 .welcome-message {
   font-size: 1.2rem;
-  margin-top: 30px;
-  margin-bottom: 10px;  /* Reduced margin to bring it closer to the links */
+  margin-bottom: 30px;
   line-height: 1.5;
-  padding-left: 20px; /* Added padding to align with text */
+  margin-left: 10%;   /* Center the image */
+  margin-right: auto;  /* Center the image */
+  margin-top: 20px;
 }
 
+/* Navigation Links (Buttons) */
 .nav-links {
   display: flex;
-  gap: 15px;
-  padding-left: 20px;
-  margin-top: 10px;  /* Reduced the margin between the welcome text and the links */
+  flex-direction: row; /* Align links in a row */
+  gap: 20px;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  margin-top: 1px;
+  margin-left: 10%;
+  padding-left: 10px; /* Space to align with the left padding of the text */
 }
 
+/* Nav Link Style */
 .nav-link {
   padding: 10px 20px;
   color: white;
@@ -59,35 +66,46 @@
   border-radius: 4px;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  justify-content: center;
-  align-items: center;  
 }
 
 .nav-link:hover {
   background-color: #21a1f1;
 }
 
-/* Right Section: Profile Picture */
-/* Home Image Section */
+/* Profile Picture Container */
 .home-image {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px; /* Set width explicitly */
-  height: 600px; /* Set height explicitly */
-  border-radius: 50%;
-  overflow: hidden; /* Hide overflowed image parts */
-  object-fit: cover; /* Ensure image scales correctly within the given size */
-  animation: fadeInRight 1.5s ease;
+  border-radius: 50%;  /* Circular shape */
+  overflow: hidden;    /* Crop overflow */
+  aspect-ratio: 1 / 1; /* Maintain a square shape */
+  width: 20vw;         /* Responsive size: 20% of viewport width */
+  max-width: 350px;    /* Max size for larger screens */
+  min-width: 150px;    /* Min size for small screens */
+ 
+  margin-left: 69px;   /* Center the image */
+  margin-right: auto;  /* Center the image */
 }
 
-/* Optional: Target the image directly */
+/* Profile Picture */
 .home-image img {
-  width: 55%; /* Ensure image takes up full width of its container */
-  height: 55%; /* Ensure image takes up full height of its container */
-  object-fit: cover; /* Keeps the image cover-style fitting inside the circle */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Fill the container without distortion */
+  object-position: bottom; /* Crop from the bottom */
 }
+
+/* Adjust image positioning on smaller screens */
+@media (max-width: 600px) {
+  .home-image {
+    width: 40vw; /* Increase the width on smaller screens */
+  }
+}
+
+
+
 
 /* Animations */
 @keyframes fadeInLeft {
